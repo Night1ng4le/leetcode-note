@@ -1,4 +1,10 @@
+---
 ### 217. 存在重复的元素
+tags:
+    - DS-basic
+    - array
+    - hash-table
+---
 
 #### 题目描述
 
@@ -62,4 +68,22 @@ class Solution {
 
 #### 哈希表
 
-寻找一组数据里的重复元素，哈希表是非常不错的选择。
+寻找一组数据里的重复元素，哈希表是很好的选择。如果插入一个元素时发现该元素已经存在于哈希表中，则说明存在重复的元素。
+> 哈希表适用的场景之一是快速查找
+> key和value相同是set，不同是map
+
+时间复杂度：O(N)，其中N为数组的长度。
+
+```java
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> hash_table = new HashSet<Integer>();
+        for(int x:nums){
+            if(!hash_table.add(x)){
+                return true;
+            }
+        }
+        return false;
+    }
+}
+```

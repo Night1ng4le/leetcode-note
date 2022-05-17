@@ -1,11 +1,9 @@
 ### 217. 存在重复的元素
 
----
-tags:
-    - DS-basic
-    - array
-    - hash-table
----
+
+- DS-basic
+- array
+- hash-table
 
 #### 题目描述
 

@@ -32,7 +32,7 @@ dp[i] = nums[i], if dp[i−1]<=0
 状态转移方程[2]:
 dp[i] = max{nums[i],dp[i-1]+nums[i]}
 
-这个比较容易理解，比较加上nums[i]和nums[i]哪个大，返回大一点的那个。
+这个比较容易理解，比较加上nums[i]和nums[i]哪个大，记录下数值较大的结果。
 
 **确定初始值**
 根据题意，初始值即为只有一个元素的时候，所以dp[0] = nums[0]
@@ -42,5 +42,40 @@ note：这里的输出不应该是最后一个状态的结果，而应该是`全
 我们需要在所有最优子问题中求解全局最优。 
 
 ```java
+// 这里用的是状态转移方程2
+class Solution {
+    private int max(int a, int b){
+    	// return max number
+        int max = 0;
+        if(a>b){
+            max = a;
+        }else{
+            max = b;
+        }
+        return max;
+    }
+    public int maxSubArray(int[] nums) {
+    	// initialize
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        // state change
+        for(int i=1;i<nums.length;i++){
+            dp[i] = max(nums[i],dp[i-1]+nums[i]);
+        }
 
+        // output 
+        int result = dp[0];
+        for(int i=1;i<dp.length;i++){
+            if(dp[i]>result){
+                result = dp[i];
+            }
+        }
+        return result;
+    }
+}
 ```
+
+`无后效性`：动态规划要求已经求解的子问题不受后续阶段的影响。换言之，动态规划对状态空间的遍历构成一张有向无环图，遍历就是该有向无环图的一个拓扑序。有向无环图中`节点`对应问题中的`状态`，`边`对应状态之间的`转移`，转移的选取就是动态规划中的`决策`。 
+
+
+### 分治法

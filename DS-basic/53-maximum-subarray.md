@@ -1,6 +1,8 @@
 ## 53. 最大子数组和
 
 - array
+- divide & conquer
+- DP(Dynamic Programming)
 
 ### 题目描述
 
@@ -41,6 +43,8 @@ dp[i] = max{nums[i],dp[i-1]+nums[i]}
 note：这里的输出不应该是最后一个状态的结果，而应该是`全局所有状态的最大值`。
 我们需要在所有最优子问题中求解全局最优。 
 
+时间复杂度：O(N)
+
 ```java
 // 这里用的是状态转移方程2
 class Solution {
@@ -79,3 +83,4 @@ class Solution {
 
 
 ### 分治法
+和最大的子数组一定会出现

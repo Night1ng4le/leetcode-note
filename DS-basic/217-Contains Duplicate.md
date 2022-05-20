@@ -1,9 +1,9 @@
 ## 217. 存在重复的元素
 
 
-- DS-basic
+- DS basic
 - array
-- hash-table
+- hash table
 
 ### 题目描述
 

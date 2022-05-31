@@ -10,6 +10,10 @@ https://leetcode.cn/problems/merge-sorted-array/
 - 数组下标不要越界
 - 因为这里没有新建第三个数组，所以排序需要从后往前排，避免覆盖前面的数字
 
+时间复杂度：O(m+n)
+
+“所有玩家都在努力向前冲刺，殊不知向后才是胜利之门。 ——《头号玩家》”
+
 ```java
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {

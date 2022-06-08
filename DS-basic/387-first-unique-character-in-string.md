@@ -38,6 +38,36 @@ public:
 };
 ```
 
+### 哈希表存储频数
+
+```c++
+class Solution{
+    int firstUniqChar(string s){
+        unordered_map<int, int> frequency;
+        for(char ch:s){
+
+        }
+    }
+}
+```
+
 ### 哈希表
+我的想法是，把其中一个字符串输入进哈希表，key是字符，value是字符出现次数。
+``` C++
+class Solution{
+    int firstUniqChar(string s){
+        unordered_map<int, int> position;
+        for (int i = 0; i < s.size(); i++)
+        {
+            /* code */
+            
+        }
+    }
+}
+```
 
 ### 队列
+
+
+
+

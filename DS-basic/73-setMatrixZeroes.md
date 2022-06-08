@@ -6,10 +6,37 @@ https://leetcode.cn/problems/set-matrix-zeroes/
 
 ### 标记数组法
 
-使用两个标记数组，一个用于记录行是否存在0，一个用来记录列是否存在0。
+使用两个标记数组，一个用于记录行是否存在0，一个用来记录列是否存在0。`注：`这是我看完题解之后才知道的
 
 ```java
-
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        int[] flag_row = new int[matrix.length];
+        int[] flag_clo = new int[matrix[0].length]; 
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                if(matrix[i][j]==0){
+                    flag_row[i] = 1;
+                    flag_clo[j] = 1;
+                }
+            }
+        }
+        for(int i=0;i<matrix.length;i++){
+            if(flag_row[i]==1){
+                for(int j=0;j<matrix[0].length;j++){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        for(int j=0;j<matrix[0].length;j++){
+            if(flag_clo[j]==1){
+                for(int i=0;i<matrix.length;i++){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+}
 ```
 
 ### 标记位法
